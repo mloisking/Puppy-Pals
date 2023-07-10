@@ -1,8 +1,11 @@
 import { puppyList } from './data.js'
 import { useState } from 'react'
+import './App.css'
 
 function App() {
-  <h2>Puppy Pals</h2>
+  <div>
+    <h2>Puppy Pals</h2>
+  </div>
   const [puppies, setPuppies] = useState(puppyList);
   const [featPupId, setFeatPupId] = useState(null);
 
@@ -14,7 +17,6 @@ function App() {
   <button onClick={() => { setFeatPupId(puppy.id) }}></button>;
   const featuredPup = puppies.find((pup) => pup.id === featPupId);
   console.log(featuredPup);
-
   return (
     <div className="App">
       {puppies.map((puppy) => {
@@ -23,18 +25,26 @@ function App() {
             {puppy.name} {puppy.isCute}
             <img src="puppy.jpeg" width="150" height="200"></img>
             <button>Click Me</button>
+            </p>
+    
+    );
+  }
+  )};
+    </div>,
 
-          </p>
-        );
-      }
-      )};
-      <p>{featPupId && <p>{featPupId}</p>}</p>
-    </div>
-  )
+featPupId && (
+<div>
+  <h2>{featuredPup.name}</h2>
+  <ul>
+    <li>Age: {featuredPup.age}</li>
+    <li>Email: {featuredPup.email}</li>
+  </ul>
+ 
+</div>
+)
+)
 };
-
-{
   
-}
-
 export default App
+
+  
