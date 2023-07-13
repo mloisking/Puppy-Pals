@@ -22,29 +22,20 @@ function App() {
       {puppies.map((puppy) => {
         return (
           <p onClick={handleClick} key={puppy.id}>
-            {puppy.name} {puppy.isCute}
-            <img src="puppy.jpeg" width="150" height="200"></img>
+            {puppy.name} {puppy.isCute} {puppy.img}
+            <img 
+            className="Puppy"
+            src="puppy.jpeg" width="150" height="200"></img>
             <button>Click Me</button>
             </p>
-    
-    );
-  }
-  )};
-    </div>,
+        );
+      })}
+      <p>{ featPupId && <p>{ featPupId }</p> } </p>
+    </div>
+  );
+    };
 
-featPupId && (
-<div>
-  <h2>{featuredPup.name}</h2>
-  <ul>
-    <li>Age: {featuredPup.age}</li>
-    <li>Email: {featuredPup.email}</li>
-  </ul>
- 
-</div>
-)
-)
-};
-  
+
 export default App
 
   
